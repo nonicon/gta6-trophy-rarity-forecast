@@ -1,0 +1,18 @@
+Practice validation (local scorer, pinball loss on logit scale)
+Answers: rates from the live Exophase page after the launch-night refresh
+(04:30 read, 3,868 players tracked) — the practice answers. Cross-check:
+the house baseline scores 1.508 here, matching the rules' "about 1.51".
+
+  p00: this forecaster 0.600121 | house baseline 1.508366
+  p01: this forecaster 0.600121 | house baseline 1.508366
+  typical miss 0.335 pts (house 0.677), 90% coverage 1.00 (house 0.00)
+
+Synthetic final-like case (2.5-day history, 4.5-day horizon, power-law
+N and earner growth with 6-hourly refreshes; ground truth by construction):
+  this forecaster 0.2947 | house baseline 0.3043
+  typical miss 0.037 pts (house 0.384), 90% coverage 0.96
+
+Note: the practice straddles one refresh over 90 minutes and is little
+guide to the final's week; the synthetic case is a mechanics check, not a
+realistic week-1 simulation. The model is built for the final's dynamics
+(dilution as the tracked base grows, then progression as players advance).
